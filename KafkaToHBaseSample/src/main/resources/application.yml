@@ -1,0 +1,27 @@
+configuration:
+  projectName: "bhpwfmhbase"
+  api.baseUrl: "http://localhost:18089/v1"
+  appversion : '/api/v1'
+  appcontext: '/wfm'
+  networkAliasAllowed: false
+  host: "localhost:18089/api"
+  
+server:
+  port: 18089
+
+        
+logging.level:
+  com.bhp.digital.wfm.poc: debug
+ 
+consumer:
+  #propfile: C:\Workspace\BHPVersion1\configfiles\consumer.props
+  propfile: src/main/resources/consumer.props
+  topic: COM.BHP.DIGITAL.WFM.POC.CREATEUSER,COM.BHP.DIGITAL.WFM.POC.UPDATEUSER,COM.BHP.DIGITAL.WFM.POC.CREATECOMPANY,COM.BHP.DIGITAL.WFM.POC.UPDATECOMPANY
+     
+producer:
+  #propfile: C:\Workspace\BHPVersion1\configfiles\producer.props
+  propfile: producer.props
+  topic: COM.BHP.DIGITAL.WFM.POC.CREATEUSER
+ 
+hbase:
+  databaseUri: jdbc:phoenix:thin:url=http://ec2-52-43-55-253.us-west-2.compute.amazonaws.com:8765;serialization=PROTOBUF

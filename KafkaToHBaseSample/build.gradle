@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'BHPHBaseService'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    // tag::jetty[]
+compile group: 'org.springframework', name: 'spring-context-support', version: '4.0.0.RELEASE'
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	compile group: 'io.swagger', name: 'swagger-annotations', version: '1.5.3'
+	compile group: 'io.swagger', name: 'swagger-core', version: '1.5.0'
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.0.1'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '1.5.0.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.0.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.0.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.0.RELEASE'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka', version: '1.1.2.RELEASE'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-config-client', version: '1.1.2.RELEASE'
+	compile group: 'org.springframework.kafka', name: 'spring-kafka', version: '1.2.0.RELEASE'
+	compile group: 'org.apache.kafka', name: 'kafka-clients', version: '0.10.2.0'
+	compile group: 'org.apache.kafka', name: 'kafka_2.11', version: '0.10.2.0'
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.8'
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.0.1'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.6.4'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.6.4'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.6.4'
+	compile("org.springframework.boot:spring-boot-starter-web-services")
+	testCompile("org.springframework.boot:spring-boot-starter-test")
+	compile group: 'org.json', name: 'json', version: '20090211'
+	compile group: 'com.hp.hpl.jena', name: 'json-jena', version: '1.0'
+	compile group: 'org.apache.phoenix', name: 'phoenix-queryserver-client', version: '4.8.1-HBase-1.2'
+   }
+   
+   configurations.all {
+   exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
