@@ -11,7 +11,7 @@ import com.poc.digital.kafka.hbase.util.Consumer;
  */
 @SpringBootApplication
 //@EnableDiscoveryClient
-@ComponentScan({"com.bhp.digital"})
+@ComponentScan({"com.poc.digital"})
 public class BHPHBaseUserApplication {
 
 	private static Consumer consumer;
