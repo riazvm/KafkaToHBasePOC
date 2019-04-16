@@ -2,7 +2,7 @@
  * Copyright (c) 2017 . All rights reserved.
  */
 
-package com.bhp.digital.wfm.hbase.poc.service.impl;
+package com.poc.digital.kafka.hbase.service.impl;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
