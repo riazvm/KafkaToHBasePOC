@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Infosys. All rights reserved.
+ * Copyright (c) 2017 . All rights reserved.
  */
 
 package com.bhp.digital.wfm.hbase.poc.service.impl;
@@ -7,15 +7,13 @@ package com.bhp.digital.wfm.hbase.poc.service.impl;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bhp.digital.wfm.hbase.poc.model.Company;
-import com.bhp.digital.wfm.hbase.poc.model.User;
-import com.bhp.digital.wfm.hbase.poc.service.HbaseService;
-import com.bhp.digital.wfm.hbase.poc.util.HBaseConnection;
+import com.poc.digital.kafka.hbase.model.Company;
+import com.poc.digital.kafka.hbase.model.User;
+import com.poc.digital.kafka.hbase.service.HbaseService;
+import com.poc.digital.kafka.hbase.util.HBaseConnection;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -95,6 +93,7 @@ public class HbaseServiceImpl implements HbaseService{
 	 */
 	public int upsertUser(User userRequest)
 	{
+		
 		PreparedStatement stmt =null;
 		int rows=0;
 		try
@@ -108,6 +107,7 @@ public class HbaseServiceImpl implements HbaseService{
 							+ "workerCategory,userType,status,supervisorID, middleName,WORKPHONE,CELLPHONE,EMAIL,DOB, GENDER,CITY,"
 							+ "PROVINCE,COUNTRY,PLANNEDSTARTDATE,ROSTERSTAYDAYS,ROSTERAWAYDAYS,SHIFT) "
 							+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			
 			stmt.setBigDecimal(1, new BigDecimal(userRequest.getPersonUniqueID().trim()));
 			stmt.setString(2, userRequest.getFirstName());
 			stmt.setString(3, userRequest.getLastName());

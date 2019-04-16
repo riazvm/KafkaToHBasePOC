@@ -1,11 +1,11 @@
-package com.bhp.digital.wfm.hbase.poc;  
+package com.poc.digital.kafka.hbase;  
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.bhp.digital.wfm.hbase.poc.util.Consumer;
+import com.poc.digital.kafka.hbase.util.Consumer;
 /**
  * Main class for Inventory micro service.
  */

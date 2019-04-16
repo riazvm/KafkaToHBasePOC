@@ -1,4 +1,4 @@
-package com.bhp.digital.wfm.hbase.poc.model;
+package com.poc.digital.kafka.hbase.model;
 
 import lombok.Data;
 

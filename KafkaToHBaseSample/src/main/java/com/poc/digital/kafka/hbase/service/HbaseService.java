@@ -1,11 +1,10 @@
 /*
- * Copyright (c) 2017 Infosys. All rights reserved.
+ * Copyright (c) 2017 . All rights reserved.
  */
+package com.poc.digital.kafka.hbase.service;
 
-package com.bhp.digital.wfm.hbase.poc.service;
-
-import com.bhp.digital.wfm.hbase.poc.model.Company;
-import com.bhp.digital.wfm.hbase.poc.model.User;
+import com.poc.digital.kafka.hbase.model.Company;
+import com.poc.digital.kafka.hbase.model.User;
 
 /**
  * Hbase service Interface

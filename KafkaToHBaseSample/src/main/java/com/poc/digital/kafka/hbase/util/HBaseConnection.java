@@ -1,4 +1,4 @@
-package com.bhp.digital.wfm.hbase.poc.util;
+package com.poc.digital.kafka.hbase.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,0 +1,56 @@
+server:
+  port: 18087
+
+security.basic.enabled: false
+management.security.enabled: false
+
+configuration:
+  projectName: "wfm"
+
+info:
+  component: wfm
+  build:
+    name:           wfm
+    description:    Test
+    version:        v1
+
+spring:
+  application:
+    name: wfm-v1
+  cloud:
+    config:
+      enabled: false
+      discovery:
+        enabled: false
+      failFast: false
+      retry:
+        initialInterval:  10000
+        multiplier:       1.1
+        maxAttempts:      20
+        maxInterval:      70000
+    bus:
+      enabled: false
+    discovery:
+      enabled: false
+
+
+#eureka:
+  #client:
+   # serviceUrl:
+     # defaultZone:  https://\${dp.username}:\${dp.password}@\${eureka.zone1.host:localhost}:9001/eureka/
+
+# Turns off request to configserver on /health endpoint
+# see https://github.com/spring-cloud/spring-cloud-config/issues/423
+health.config.enabled: false
+
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      enabled: true
+      discovery:
+        enabled: true
+    discovery:
+      enabled: true
+

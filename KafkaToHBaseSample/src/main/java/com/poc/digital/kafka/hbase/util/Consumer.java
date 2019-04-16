@@ -1,7 +1,8 @@
-package com.bhp.digital.wfm.hbase.poc.util;
-import com.bhp.digital.wfm.hbase.poc.model.Company;
-import com.bhp.digital.wfm.hbase.poc.model.User;
-import com.bhp.digital.wfm.hbase.poc.service.HbaseService;
+package com.poc.digital.kafka.hbase.util;
+
+import com.poc.digital.kafka.hbase.model.Company;
+import com.poc.digital.kafka.hbase.model.User;
+import com.poc.digital.kafka.hbase.service.HbaseService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.apache.kafka.clients.consumer.ConsumerRebalanceListener;
